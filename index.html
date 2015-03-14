@@ -1,9 +1,117 @@
 <!doctype html>
 <html>
-<head>
-  <title>T9 Keypad</title>
-</head>
-<body>
-  <h2>Text on 9 Keys</h2>
-</body>
+    <head>
+        <title>T9</title>
+        <style>
+        #phone button{
+            height: 50px;
+            width: 75px;
+        }
+        #phone button span{
+            display: block;
+            margin-top: 5px;
+            font-size: 10px;
+        }
+        #result{
+            width: 225px;
+            height: 25px;
+            margin-left:2px;
+        }
+        </style>
+    </head>
+    <body>
+        <table id="phone">
+            <tr>
+                <td colspan="3">
+                    <input type="text" id="result" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button data-value="1" class="key">1
+                        <span>. , !</span>
+                    </button>
+                </td>
+                <td>
+                    <button data-value="2" class="key">2
+                        <span>a b c</span>
+                    </button>
+                </td>
+                <td>
+                    <button data-value="3" class="key">3
+                        <span>d e f</span>
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button data-value="4" class="key">4
+                        <span>g h i</span>
+                    </button>
+                </td>
+                <td>
+                    <button data-value="5" class="key">5
+                        <span>j k l</span>
+                    </button>
+                </td>
+                <td>
+                    <button data-value="6" class="key">6
+                        <span>m n o</span>
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td><button data-value="7" class="key">7
+                    <span>p q r s</span>
+                    </button>
+                </td>
+                <td>
+                    <button data-value="8" class="key">8
+                        <span>t u v</span>
+                    </button>
+                </td>
+                <td>
+                    <button data-value="9" class="key">9
+                        <span>w x y z</span>
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td><button data-value="*" class="key">*</button></td>
+                <td><button data-value="0" class="key">0</button></td>
+                <td><button data-value="#" class="key">#</button></td>
+            </tr>
+        </table>
+        <script src="js/jquery.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#phone").find("button").mouseup(function(event){
+                    var button_pressed = $(event.currentTarget).data("value");
+                    $("#result").val(t9($("#result").val(),button_pressed));
+                })
+            })
+            function t9(text,button_pressed){
+                this.keypad=[[],[".",",","!","1"],["a","b","c","2"],["d","e","f","3"],["g","h","i","4"],["j","k","l","5"],["m","n","o","6"],["p","q","r","s","7"],["t","u","v","8"],["w","x","y","z","9"]];
+                var pos;
+                if(["*",0,"#"].indexOf(button_pressed) > -1) {
+                    text += button_pressed;
+                }
+                else{
+                    pos = keypad[button_pressed].indexOf(text.charAt(text.length-1));
+                    if((pos > -1) && (this.wait == true)) {
+                        clearTimeout(this.timer);
+                        text=text.slice(0,text.length-1) + keypad[button_pressed][(pos+1)%keypad[button_pressed].length];
+                        this.timer = setTimeout(function(){this.wait = false;},1000);
+                        this.wait = true;
+                    }
+                    else{
+                        text += keypad[button_pressed][0];
+                        this.timer = setTimeout(function(){this.wait = false;},1000);
+                        this.wait = true;
+                    }
+                }
+                return text;
+            }
+        </script>
+    </body>
 </html>
