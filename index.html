@@ -2,8 +2,9 @@
 <html>
     <head>
         <title>T9</title>
+          <link rel="stylesheet" type="text/css" media="screen" href="css/screen.css" />
         <style>
-        #phone button{
+/*        #phone button{
             height: 50px;
             width: 75px;
         }
@@ -16,72 +17,86 @@
             width: 225px;
             height: 25px;
             margin-left:2px;
-        }
-        </style>
+        }*/
+        </style> 
     </head>
     <body>
-        <table id="phone">
-            <tr>
-                <td colspan="3">
-                    <input type="text" id="result" />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <button data-value="1" class="key">1
-                        <span>. , !</span>
-                    </button>
-                </td>
-                <td>
-                    <button data-value="2" class="key">2
-                        <span>a b c</span>
-                    </button>
-                </td>
-                <td>
-                    <button data-value="3" class="key">3
-                        <span>d e f</span>
-                    </button>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <button data-value="4" class="key">4
-                        <span>g h i</span>
-                    </button>
-                </td>
-                <td>
-                    <button data-value="5" class="key">5
-                        <span>j k l</span>
-                    </button>
-                </td>
-                <td>
-                    <button data-value="6" class="key">6
-                        <span>m n o</span>
-                    </button>
-                </td>
-            </tr>
-            <tr>
-                <td><button data-value="7" class="key">7
-                    <span>p q r s</span>
-                    </button>
-                </td>
-                <td>
-                    <button data-value="8" class="key">8
-                        <span>t u v</span>
-                    </button>
-                </td>
-                <td>
-                    <button data-value="9" class="key">9
-                        <span>w x y z</span>
-                    </button>
-                </td>
-            </tr>
-            <tr>
-                <td><button data-value="*" class="key">*</button></td>
-                <td><button data-value="0" class="key">0</button></td>
-                <td><button data-value="#" class="key">#</button></td>
-            </tr>
-        </table>
+		<div class="phone" id="phone">
+			<div class="top-panel">
+				<div class="ear-piece"></div>
+				<div class="screen"></div>
+				<textarea id="result" class="text-area"></textarea>
+		</div>
+
+		<div class="btn-group">
+		    <div class="nav-pad">
+		      <button class="btn btn-left"></button>
+		      <button class="btn btn-right"></button>
+		      <button class="btn btn-green"></button>
+		      <button class="btn btn-red"></button>
+		      <button class="btn-nav"></button>
+		    </div>
+		    <div class="num-pad">
+		      <table>
+		            <tr>
+		                <td>
+		                    <button data-value="1" class="key">1
+		                        <span>. , !</span>
+		                    </button>
+		                </td>
+		                <td>
+		                    <button data-value="2" class="key">2
+		                        <span>a b c</span>
+		                    </button>
+		                </td>
+		                <td>
+		                    <button data-value="3" class="key">3
+		                        <span>d e f</span>
+		                    </button>
+		                </td>
+		            </tr>
+		            <tr>
+		                <td>
+		                    <button data-value="4" class="key">4
+		                        <span>g h i</span>
+		                    </button>
+		                </td>
+		                <td>
+		                    <button data-value="5" class="key">5
+		                        <span>j k l</span>
+		                    </button>
+		                </td>
+		                <td>
+		                    <button data-value="6" class="key">6
+		                        <span>m n o</span>
+		                    </button>
+		                </td>
+		            </tr>
+		            <tr>
+		                <td><button data-value="7" class="key">7
+		                    <span>p q r s</span>
+		                    </button>
+		                </td>
+		                <td>
+		                    <button data-value="8" class="key">8
+		                        <span>t u v</span>
+		                    </button>
+		                </td>
+		                <td>
+		                    <button data-value="9" class="key">9
+		                        <span>w x y z</span>
+		                    </button>
+		                </td>
+		            </tr>
+		            <tr>
+		                <td><button data-value="*" class="key">*</button></td>
+		            	<td><button data-value="0" class="key">0<span> _</span></button></td>
+		                <td><button data-value="#" class="key">#</button></td>
+		            </tr>
+		      </table>
+		    </div>
+		  </div>
+		</div>
         <script src="js/jquery.js"></script>
         <script>
             $(document).ready(function(){
@@ -91,9 +106,9 @@
                 })
             })
             function t9(text,button_pressed){
-                this.keypad=[[],[".",",","!","1"],["a","b","c","2"],["d","e","f","3"],["g","h","i","4"],["j","k","l","5"],["m","n","o","6"],["p","q","r","s","7"],["t","u","v","8"],["w","x","y","z","9"]];
+                this.keypad=[[" ","0"],[".",",","!","1"],["a","b","c","2"],["d","e","f","3"],["g","h","i","4"],["j","k","l","5"],["m","n","o","6"],["p","q","r","s","7"],["t","u","v","8"],["w","x","y","z","9"]];
                 var pos;
-                if(["*",0,"#"].indexOf(button_pressed) > -1) {
+                if(["*","#"].indexOf(button_pressed) > -1) {
                     text += button_pressed;
                 }
                 else{
