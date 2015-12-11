@@ -2,30 +2,38 @@
 <html>
     <head>
         <title>T9</title>
-          <link rel="stylesheet" type="text/css" media="screen" href="css/screen.css" />
-        <style>
-/*        #phone button{
-            height: 50px;
-            width: 75px;
-        }
-        #phone button span{
-            display: block;
-            margin-top: 5px;
-            font-size: 10px;
-        }
-        #result{
-            width: 225px;
-            height: 25px;
-            margin-left:2px;
-        }*/
-        </style> 
+          <link rel="stylesheet" type="text/css" media="screen" href="css/phone.css" />
     </head>
     <body>
+
+		<!-- Google Tag Manager -->
+		<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-MGGQXF"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-MGGQXF');</script>
+		<!-- End Google Tag Manager -->
+    
+    	<div class="title">
+    		<h1>
+    			<span class="tribute">A tribute to</span>
+    			<span class="T9">T9</span>
+    		</h1>
+    		<p>
+    			T9, which stands for Text on 9 keys, is a predictive text technology for mobile phones (specifically those that contain a 3x4 numeric keypad), originally developed by Tegic Communications, now part of Nuance Communications.</p>
+
+			<p>
+				T9 was used on phones from Verizon Wireless, NEC, Nokia, Samsung Electronics, Siemens, Sony Ericsson, Sanyo, Sagem and others.
+				<a href="https://en.wikipedia.org/wiki/T9_(predictive_text)">[...Wikipedia]</a>
+    		</p>
+    	</div>
 		<div class="phone" id="phone">
 		  <div class="top-panel">
 		    <div class="ear-piece"></div>
 		    <div class="screen"></div>
-		    <textarea readonly id="result" class="text-area"></textarea>
+		    <textarea readonly id="result" class="text-area" placeholder="use numpad to type.."></textarea>
 		  </div>
 		  
 		  <div class="btn-group">

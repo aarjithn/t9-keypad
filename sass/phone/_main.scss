@@ -1,27 +1,71 @@
-body{
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
+@import url(https://fonts.googleapis.com/css?family=Alex+Brush|Lustria);
+
+body {
   background-color: #dedede;
-  background: radial-gradient(ellipse at center, rgba(242,242,242,1) 0%, rgba(179,179,179,1) 100%);
+  background: radial-gradient(ellipse at center, rgba(252,252,255,1) 0%, rgba(220,220,225,1) 100%);
+  font-family: sans-serif;
+  margin-top: 80px;
+}
+
+.title {
+  width: 50%;
+  float: left;
+  text-align: center;
+  padding-left: 30px;
+}
+
+.tribute {
+  font-size: 1.6em;
+  font-style: italic;
+  display: block; 
+  font-family: 'Alex Brush', cursive;
+  font-weight: 200;
+}
+
+.T9 {
+  font-size: 5em;
+  font-family: 'Lustria', serif;
+  display: block; 
+  font-weight: 200;
+}
+
+.T9:after {
+  content:'';
+  width: 40%;
+  height: 1px;
+  background-color: #222;
+  position: absolute;
+  left: 8%;
+  display: block; 
+}
+
+.title p {
+  font-size: 1em;
+  /*font-family: 'Open Sans', sans-serif;*/
+  font-family: 'Lustria', serif;
+  line-height: 1.5em;
 }
 
 .phone {
   width: 220px;
   height: 500px;
-  background: #111;
+  background: #262626;
   border: 5px solid #222;
   border-radius: 8px;
   position: relative;
-  box-shadow: 0px 12px 17px 0px rgba(0, 0, 0, 0.75);
-  margin: 50px auto;
+  box-shadow: 0px 12px 17px 0px rgba(0, 0, 0, 0.55);
+  margin: 0px 60%;
 }
 
 .ear-piece {
   width: 60px;
-  height: 8px;
+  height: 7px;
   position: absolute;
   top: 35px;
   left: 80px;
   border-radius: 5px;
-  background-color: #000;
+  background-color: #555;
   z-index: 40;
 }
 
@@ -36,18 +80,6 @@ body{
   border: 1px solid #1a1a1a;
   border-radius: 10px;
 }
-
-/*.screen:after {
-  position: absolute;
-  content: '';
-  top: 28px;
-  left: 5px;
-  z-index: 50;
-  width: 160px;
-  height: 180px;
-  margin: 40px 25px;
-  background: #aaa;
-}*/
 
 button::-moz-focus-inner {
   border: 0;
@@ -71,7 +103,7 @@ button:focus {
   height: 0;
   border-left: 4px solid transparent;
   border-right: 4px solid transparent;
-  border-bottom: 8px solid #99f;
+  border-bottom: 8px solid #A5BFFF;
   position: absolute;
   left: calc(50% - 4px);
   top: 5px;
@@ -82,7 +114,7 @@ button:focus {
   height: 0;
   border-left: 4px solid transparent;
   border-right: 4px solid transparent;
-  border-top: 8px solid #99f;
+  border-top: 8px solid #A5BFFF;
   position: absolute;
   left: calc(50% - 4px);
   bottom: 5px;
@@ -92,7 +124,7 @@ button:focus {
   width: 0;
   height: 0;
   border-top: 4px solid transparent;
-  border-right: 8px solid #99f;
+  border-right: 8px solid #A5BFFF;
   border-bottom: 4px solid transparent;
   position: absolute;
   left: 5px;
@@ -103,18 +135,20 @@ button:focus {
   width: 0;
   height: 0;
   border-top: 4px solid transparent;
-  border-left: 8px solid #99f;
+  border-left: 8px solid #A5BFFF;
   border-bottom: 4px solid transparent;
   position: absolute;
   right: 5px;
   bottom: calc(50% - 4px);
 }
+
 .num-pad {
   margin-left: 4px;
 }
+
 button {
   cursor: pointer;
-  color: #99f;
+  color: #A5BFFF;
   font-kerning: auto;
   font: bold 10pt arial;
   text-decoration: none;
@@ -151,44 +185,52 @@ button:active {
   position: absolute;
   height: 27px;
 }
+
 .nav-pad .btn:after{
   content:'';
   position: absolute;
-  background-color: #aaf;
+  background-color: #A5BFFF;
   height: 3px;
   width: 30px;
   left: 18px;
   border-radius: 2px;
 }
+
 .btn-left{
   top: 276px;
   left: 8px;
 }
+
 .btn-green{
   top: 307px;
   left: 8px;
 }
+
 .btn-green:after{
-  background-color: #2f2 !important;
+  background-color: #3b3 !important;
 }
+
 .btn-right{
   top: 276px;
   left: 145px;
 }
+
 .btn-red{
   top: 307px;
   left: 145px;
 }
+
 .btn-red:after{
-  background-color: #f22 !important;
+  background-color: #b33 !important;
 }
+
 .text-area{
   position: absolute;
-  border: 0;
-  outline: 0;
+  background-color: #fafaff;
   margin-left: 28px;
   margin-top: 68px;
-  font-size: 2em;
+  font-size: 1.5em;
+  font-weight: 200;
   z-index: 50;
   width: 160px;
   height: 175px;
